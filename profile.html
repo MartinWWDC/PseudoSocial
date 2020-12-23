@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Profile</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-tools/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for thist template -->
+    <link href="bootstrap-tools/css/blog-home.css" rel="stylesheet">
+    <link href="CSS/profileStyle.css" rel="stylesheet">
+  </head>
+
+  <body class="secondary-color">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top primary-color dashboard-nav">
+      <div class="collapse navbar-collapse w-100 flex-md-column">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- '&nbsp' è un carattere invisibile. serve a mantenere le dimensioni della navbar mentre
+            javascript sta prendendo lo username da firebase -->
+            <h1 id="userName" class="text-color my-4">&nbsp</h1>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container-fluid">
+      <div class="row my-5"> 
+        <div class="col-md-3">
+          <div class="row">
+            <div class="col-md-8"></div>
+            <div class="col-md-4">
+              <button display="none" onclick="navigateBack()" class="my-5 btn btn-outline-secondary" type="button"> < Back </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-8">
+              <h1 class="my-5 text-color">Informations</h1>
+            </div>
+            <div class="col-md-4 text-right">
+              <button display="none" onclick="toggleChangeProfileInformationsForm()" class="my-5 btn btn-outline-secondary" type="button">Edit profile</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <img id="profileImage" class="rounded" src="https://www.flaticon.com/svg/static/icons/svg/64/64572.svg" width="190px" height="190px"/>
+            </div>
+            <div class="col-md-8">
+              <h5 class="text-color" id="statisticheUser"></h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div id="changeProfileInfo">
+                <h1 class="mt-5 text-color">Update</h1>
+
+                <div id=change class="col-md-12">
+                  <form id="form-change">
+                    <div class="form-section">
+                      <h5 class="mt-4 text-color" id="change_User">Username</h5>
+                      <input type="text" name="form-signup-username" value=''>
+                    </div>
+                    <div class="form-section">
+                      <h5 class="mt-3 text-color">Profile image</h5>
+                      <input type='file'id="imageSelect" onchange="chooseFile(event)" />
+                    </div>
+                  </form>
+                    <h5 class="mt-3 text-color" id="user-mail">Your current mail: </h5>
+                  <h5 class="mt-3 text-color" id="errorMessage"></h5>
+                  <div class="mt-5">
+                    <button class="btn btn-light" onclick="changeName()">Update Name</button>
+                    <button class="btn btn-light" onclick="changeImage()">Update Image</button>
+                    <button class="btn btn-light" onclick="changePass()">Update Pass</button>
+                    <button class="btn btn-light" onclick="changeEmail()">Update Email</button>
+                  </div>
+                </div>
+
+                <div id="emailAlert">
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <h1 class="my-5 text-color">Posts</h1>
+          <div id="dashboard"></div></div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="bootstrap-tools/vendor/jquery/jquery.min.js"></script>
+    <script src="bootstrap-tools/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/profile.js"></script>
+
+  </body>
+
+  <!-- Firebase Library-->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAWqhFbPbb6PPy0RmTQfeTUWwtuzxZFXCM",
+        authDomain: "pseudosocial2.firebaseapp.com",
+        projectId: "pseudosocial2",
+        storageBucket: "pseudosocial2.appspot.com",
+        messagingSenderId: "401372825231",
+        appId: "1:401372825231:web:8d69431cca485d290b12fa"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+</html>

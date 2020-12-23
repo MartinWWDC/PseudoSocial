@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Sign Up</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap-tools/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="CSS/signUpStyle.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="bootstrap-tools/css/blog-home.css" rel="stylesheet">
+        <script src="JS/LogInSignUp/signUpScript.js"></script>
+        <style src="CSS/style.css"></style>
+    </head>
+
+    <body class="secondary-color">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">PseudoSocial</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link text-color" href="logIn.html">Already a member? Log in!
+                            <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8"></div>
+                    <div id="form-div" class="col-md-3 text-left">
+                        <form id="form-signup">
+                            <div class="form-section">
+                                <div class="text-color" id="input_text">E-mail</div><input type="text" name="form-signup-mail"><br>
+                                <div class="text-color" id="input_text">Username</div><input type="text" name="form-signup-username"><br>
+                            </div>
+                            <div class="form-section">
+                                <div class="text-color" id="input_text">Password</div><input type="text" name="form-signup-password"><br>
+                                <div  class="text-color"id="input_text">Password confirmation</div><input type="text" name="form-signup-password-confirmation">
+                                <input class="mt-5" type='file' id="imageSelect" onchange="chooseFile(event)" />
+                                <h5 class="text-color" id="errorMessage"></h5>
+                            </div>
+                        </form>
+                        <button type="button" class="btn btn-light" id="signUp" onclick="getSignUpElements()">Sign up</button>
+                    </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+        <!-- /.container -->
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="bootstrap-tools/vendor/jquery/jquery.min.js"></script>
+        <script src="bootstrap-tools/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+
+    <!-- Firebase Library-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyAWqhFbPbb6PPy0RmTQfeTUWwtuzxZFXCM",
+          authDomain: "pseudosocial2.firebaseapp.com",
+          projectId: "pseudosocial2",
+          storageBucket: "pseudosocial2.appspot.com",
+          messagingSenderId: "401372825231",
+          appId: "1:401372825231:web:8d69431cca485d290b12fa"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      </script>
+</html>

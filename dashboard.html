@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-tools/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for thist template -->
+    <link href="bootstrap-tools/css/blog-home.css" rel="stylesheet">
+    <link href="CSS/dashboardStyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+  </head>
+
+  <body class="secondary-color">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top primary-color dashboard-nav">
+      <div class="collapse navbar-collapse w-100 flex-md-column">
+        <div class="row">
+          <div class="col">
+            <h2 class="text-color"><b>Pseudo Social</b></h2>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container-fluid">
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+      <div class="row">
+
+        <!-- Spacer -->
+        <div class="col-md-1"></div>
+
+        <!-- Posts -->
+        <div class="col-md-6 mt-5">
+          <!-- Dashboard header -->
+          <h1 class="my-5 text-color"><b>Dashboard</b></h1>
+          <!-- Dashboard loading posts alert -->
+          <div class="text-center text-color" id="loading-posts-alert"></div>
+          <!-- Dashboard body -->
+          <div class="dashboard" id="dashboard">
+            <main>
+              <div class="list" id="list"></div>
+              <div class="pagenumbers" id="pagination">
+            </main>
+          </div>
+        </div>
+
+        <!-- Profile -->
+        <div class="col-md-3 offset-md-8 position-fixed mt-5">
+
+          <!-- Profile header -->
+          <h1 class="my-5 text-color">&nbsp</h1>
+
+          <!-- Profile -->
+          <a href="profile.html">
+            <div class="rounded mb-5">
+              <div class="row align-items-center">
+                <div class="col-md-2">
+                  <img id="userImage" class="rounded" src="https://www.flaticon.com/svg/static/icons/svg/64/64572.svg" height="50px" width="50px"/>
+                </div>
+                <div class="col-md-10 text-left">
+                  <h3 class="text-color user-text-size" id="nomeUtente"></h3>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <div class="my-5">&nbsp</div>
+
+          <!-- Profile search -->
+          <div class="row align-items-center my-5">
+            <div class="col-md-2">
+              <a onclick="sendUsernameToSearchPage()" id="user-search-bar-button" href="profilesList.html">
+                <img src="assets/search_icon.png" width="45px" />
+              </a>
+            </div>
+            <div class="col-md-10 text-left">
+              <form id="searchUsers">
+                <input style="background-color: white;" type="text" id="user-search-bar" name="form-search-bar">
+              </form>
+            </div>
+          </div>
+
+          <!-- New post -->
+          <a href ="createPost.html">
+            <div class="row align-items-center">
+              <div class="col-md-2">
+                <img src="assets/add_icon.png" width="45px"/>
+              </div>
+              <div class="col-md-10 text-left">
+                <h3 class="text-color"><b>Create new post</b></h3>
+              </div>
+            </div>
+          </a>
+
+          <!-- Logout -->
+          <a onclick="logout()" href="">
+            <div class="row align-items-center my-5">
+              <div class="col-md-2">
+                <img src="assets/logout_icon.png" width="45px"/>
+              </div>
+              <div class="col-md-10 text-left">
+                <h3 class="text-color"><b>Logout</b></h3>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="bootstrap-tools/vendor/jquery/jquery.min.js"></script>
+    <script src="bootstrap-tools/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/dashBoardScript.js"></script>
+
+  </body>
+
+  <!-- Firebase Library-->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAWqhFbPbb6PPy0RmTQfeTUWwtuzxZFXCM",
+      authDomain: "pseudosocial2.firebaseapp.com",
+      projectId: "pseudosocial2",
+      storageBucket: "pseudosocial2.appspot.com",
+      messagingSenderId: "401372825231",
+      appId: "1:401372825231:web:8d69431cca485d290b12fa"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+</html>

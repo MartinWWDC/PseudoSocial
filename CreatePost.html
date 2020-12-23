@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <script src="JS\p5.js"></script>
+    <script src="JS\p5.sound.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
+
+    <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="bootstrap-tools\vendor\bootstrap\css\bootstrap.min.css">
+    <link rel="stylesheet" href="CSS\createPost.css">   
+    <link rel="stylesheet" href="CSS\createPostStyle.css">     
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <meta charset="utf-8">
+  </head>
+
+  <body class="secondary-color">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top primary-color dashboard-nav">
+      <div class="collapse navbar-collapse w-100 flex-md-column">
+        <div class="row">
+          <div class="col">
+            <h2 class="text-color"><b>Pseudo Social</b></h2>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container-fluid">
+      <div class="row my-5">
+
+        <div class="col-md-1"></div>
+
+        <div class="col-md-5 text-center my-5">
+          <h1 class="text-color my-4">&nbsp</h1>
+          <div id="postText" class="mt-5 mb-3">
+            <textarea id="contenuto" name="postContent" rows="10" cols="56"></textarea>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-left">
+              <button type="button" class="btn btn-danger btn-lg" onclick="goBackToDashboard()">Back to dashboard</button>
+              <button type="button" class="btn btn-success btn-lg" onclick="post()">Post</button>
+            </div>
+          </div>
+          <h1 class="text-color my-4">&nbsp</h1>
+        </div>
+
+        <div class="col-md-5 my-5 align-self-end">
+          <div class="row">
+            <div id="app" class="col-md-12 col-md-12">
+              <div class="row">
+                <div class="col-lg-12 col-lg-0" id="app-viewer" v-show="results">
+                  <img :src="current_gif" v-show="current_gif" class="center-block">
+                  <h3 v-show="results.length === 0" class="no-results text-color">No results were found</h3>
+                  <!--<h3 v-show="results.length > 0 && !current_gif">Select a gif</h3>-->
+                </div>
+              </div>
+              <div class="row my-5">
+                <div class="col-md-10">
+                  <div :class="{'col-xs-0 col-xl-12': results, 'first-search': !results}">
+                    <form class="form-horizontal" v-on:submit.prevent="searchGIFs()">
+                        <div class="form-group">
+                            <!--<h3>Search gifs by key words</h3>-->
+                            <input type="text" class="form-control" placeholder="Key words" v-model="query">
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="searchBtn" :disabled="query.trim() == '' ? true : false">
+                            Search
+                        </button>
+                    </form>
+                    <div v-show="results" class="results-box">
+                      <img :src="gif.images.fixed_height_small.url" class="image-card" v-for="gif in results" v-on:click="viewGIF(gif)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+
+  </body>
+
+  <script src="JS\vue.js"></script>
+  <script src="JS\axios.min.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+  <script src="JS\createPostScript.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAWqhFbPbb6PPy0RmTQfeTUWwtuzxZFXCM",
+      authDomain: "pseudosocial2.firebaseapp.com",
+      projectId: "pseudosocial2",
+      storageBucket: "pseudosocial2.appspot.com",
+      messagingSenderId: "401372825231",
+      appId: "1:401372825231:web:8d69431cca485d290b12fa"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+</html>

@@ -1,0 +1,49 @@
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .secondary-color {
+    background-color: #1E2043;
+}
+
+.primary-color {
+    background-color: #15162e;
+}
+
+.tertiary-color {
+    background-color: #8c8f9b;
+}
+
+.dashboard-nav {
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 7px 0 rgba(0, 0, 0, 0.19);
+}
+
+.text-color {
+    color: white;
+}
+  
+  canvas {
+    display: block;
+  }
+  
+  #input_text {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    font-size:1.3vw;
+    font-weight: bold;
+  }
+
+  .form-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  input {
+    border-radius: 8px;
+  }
+  
+  #form-div {
+    padding-top: 180px;
+    padding-bottom: 100px;
+  }

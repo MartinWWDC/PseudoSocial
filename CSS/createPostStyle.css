@@ -1,0 +1,41 @@
+canvas {
+    display: block;
+}
+
+.secondary-color {
+    background-color: #1E2043;
+}
+
+.primary-color {
+    background-color: #15162e;
+}
+
+.tertiary-color {
+    background-color: #8c8f9b;
+}
+
+.dashboard-nav {
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 7px 0 rgba(0, 0, 0, 0.19);
+}
+
+.text-color {
+    color: white;
+}
+
+.account-text {
+    padding-left: 1.5rem;
+    padding-top: 12px;
+    font-size: 25px;
+}
+
+.account-avatar {
+    height: 60px;
+    width: 60px;
+}
+
+.heart-image {
+    padding-top: 15px;
+    height: 40px;
+    width: 40px;
+    padding-bottom: 0px;
+}

@@ -1,0 +1,47 @@
+#app {
+    display: block;
+    float: none;
+    margin: 20px auto;
+}
+
+#searchBtn {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+}
+
+#app-viewer img {
+    display: block;
+    margin-top: 20px;
+    box-shadow: #ccc 0 0 1px;
+    max-height: 80%;
+    max-width: 80%;
+    min-height: 400px;
+}
+
+.image-card{
+    width: 22.5%;
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    height: 120px;
+    box-shadow: #000 0 0 1px;
+}
+
+.results-box {
+    margin-top: 0px;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.first-search {
+    margin: 50px auto 0 auto;
+    width: 80%;
+    max-width: 500px;
+    display: block;
+}
+
+.no-results {
+    text-align: center;
+    margin-top: 20px;
+}
